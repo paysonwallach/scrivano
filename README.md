@@ -6,7 +6,7 @@
   </a>
 
   <a href="https://github.com/paysonwallach/scrivano/blob/master/LICENSE" target="\_blank">
-    <img alt="Licensed under the Hippocratic License version 2.1" src="https://img.shields.io/github/license/paysonwallach/scrivano?style=flat-square" />
+    <img alt="Licensed under the Hippocratic License version 2.1" src="https://img.shields.io/badge/license-HIP-994444?style=flat-square" />
   </a>
 
   <a href="https://buymeacoffee.com/paysonwallach">
