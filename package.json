@@ -1,0 +1,60 @@
+{
+  "name": "scrivano",
+  "version": "0.1.0",
+  "description": "A meta-build system to keep your project in sync.",
+  "keywords": [
+    "meta",
+    "build",
+    "system",
+    "template"
+  ],
+  "homepage": "https://github.com/paysonwallach/scrivano#readme",
+  "bugs": {
+    "url": "https://github.com/paysonwallach/scrivano/issues"
+  },
+  "license": "GPL-3.0",
+  "author": "Payson Wallach <payson@paysonwallach.com>",
+  "bin": "bin/cli.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paysonwallach/scrivano"
+  },
+  "scripts": {
+    "format": "prettier --write .",
+    "prerelease": "node bin/cli.js",
+    "release": "standard-version"
+  },
+  "dependencies": {
+    "nunjucks": "^3.2.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "standard-version": "^9.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npm run format"
+    }
+  },
+  "standard-version": {
+    "scripts": {
+      "precommit": "npm run pre-release"
+    }
+  },
+  "meta": {
+    "name": "Scrivano",
+    "repository": {
+      "owner": "paysonwallach",
+      "name": "scrivano"
+    },
+    "license": {
+      "name": "GNU General Public License v3.0",
+      "url": "https://github.com/paysonwallach/scrivano/blob/master/LICENSE"
+    }
+  }
+}
