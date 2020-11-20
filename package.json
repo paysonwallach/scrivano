@@ -1,27 +1,23 @@
 {
   "name": "scrivano",
-  "version": "0.1.0",
   "description": "A meta-build system to keep your project in sync.",
-  "keywords": [
-    "meta",
-    "build",
-    "system",
-    "template"
-  ],
-  "homepage": "https://github.com/paysonwallach/scrivano#readme",
-  "bugs": {
-    "url": "https://github.com/paysonwallach/scrivano/issues"
-  },
   "license": "Hippocratic-2.1",
   "author": "Payson Wallach <payson@paysonwallach.com>",
-  "bin": "bin/cli.js",
+  "homepage": "https://github.com/paysonwallach/scrivano#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/paysonwallach/scrivano"
   },
+  "bugs": {
+    "url": "https://github.com/paysonwallach/scrivano/issues"
+  },
+  "version": "0.1.0",
+  "bin": "bin/cli.js",
   "scripts": {
-    "format": "prettier --write .",
-    "pre-release": "node bin/cli.js",
+    "format": "run-p format:*",
+    "format:js": "eslint .",
+    "format:package.json": "prettier-package-json --write",
+    "prerelease": "node bin/cli.js",
     "release": "standard-version"
   },
   "dependencies": {
@@ -39,15 +35,16 @@
     "prettier-package-json": "^2.1.3",
     "standard-version": "^9.0.0"
   },
+  "keywords": [
+    "build",
+    "meta",
+    "system",
+    "template"
+  ],
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "npm run format"
-    }
-  },
-  "standard-version": {
-    "scripts": {
-      "precommit": "npm run pre-release"
     }
   },
   "meta": {
@@ -55,6 +52,11 @@
     "license": {
       "name": "Hippocratic License version 2.1",
       "url": "https://github.com/paysonwallach/scrivano/blob/master/LICENSE"
+    }
+  },
+  "standard-version": {
+    "scripts": {
+      "precommit": "npm run prerelease"
     }
   }
 }
