@@ -1,6 +1,9 @@
 {
   "extends": ["prettier"],
   "plugins": ["prettier"],
+  "parserOptions": {
+    "ecmaVersion": 2017
+  },
   "rules": {
     "indent": ["error", 2],
     "prettier/prettier": ["error"]
