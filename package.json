@@ -34,18 +34,6 @@
     "prettier-package-json": "^2.6.0",
     "standard-version": "^9.3.0"
   },
-  "keywords": [
-    "build",
-    "meta",
-    "system",
-    "template"
-  ],
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "npm run format"
-    }
-  },
   "meta": {
     "name": "Scrivano",
     "repository": {
